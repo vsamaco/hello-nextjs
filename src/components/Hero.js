@@ -1,6 +1,6 @@
 import React from 'react'
-import SignupForm from '../components/SignupForm'
-import { Tick } from '../../icons'
+import SignupForm from './SignupForm'
+import { Tick } from '../icons'
 
 const outcomes = [
   "how to build 1",

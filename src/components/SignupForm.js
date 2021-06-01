@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { Cross } from "../../icons"
+import { Cross } from "../icons"
 
 const ErrorMessage = ({ message }) => (
   <p className="text-sm px-3 mt-1 text-red-500 inline-block">{message}</p>
@@ -34,7 +34,7 @@ const SignupForm = ({ title }) => {
 
   const formClass = classNames({
     "flex items-center border rounded-md p-1 focus-within:border-blue-500 focus-within:ring-blue-200 focus-within:ring-4": true,
-    "border-gray-100": !isLoading,
+    "border-gray-300": !isLoading,
     "bg-gray-100 border-red-200": isLoading,
   });
 
@@ -49,7 +49,7 @@ const SignupForm = ({ title }) => {
   });
 
   const subscribe = async ({email}) => {
-    const response = await fetch(`/api/subscribe?email=`);
+    const response = await fetch(`/api/subscribe?email=${email}`);
     if (!response.ok) {
       throw "There was an error subscribing";
     }
